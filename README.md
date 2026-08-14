@@ -42,27 +42,20 @@ The site goes live at `https://<your-github-username>.github.io` within a minute
 
 Use a unique `id` per abstract (`abs1`, `abs2`, ...).
 
-## Before going live: set your real URL
+## Site URL
 
-Every SEO tag currently points at a placeholder. Social previews and the canonical
-tag need absolute URLs, so this must be replaced or link previews break silently.
-
-Run this once from this folder, substituting your real site URL (no trailing slash):
-
-```
-grep -rl 'https://REPLACE-ME.github.io' . --exclude-dir=.git | xargs sed -i '' 's|https://REPLACE-ME.github.io|https://YOUR-REAL-URL|g'
-```
-
-Verify nothing is left:
+Live at **https://carsonqzhang.github.io** — this URL is baked into the canonical tag,
+Open Graph tags, JSON-LD, `robots.txt`, and `sitemap.xml`. If you ever move to a custom
+domain, update it everywhere with:
 
 ```
-grep -r 'REPLACE-ME' . --exclude-dir=.git
+grep -rl 'https://carsonqzhang.github.io' . --exclude-dir=.git | xargs sed -i '' 's|https://carsonqzhang.github.io|https://NEW-DOMAIN|g'
 ```
 
 ## SEO checklist
 
-- [ ] Replace the placeholder URL (above)
-- [ ] Push to a **public** repo named `<username>.github.io`, enable Pages
+- [x] Replace the placeholder URL
+- [x] Push to a **public** repo named `carsonqzhang.github.io`, enable Pages
 - [ ] Point the old Google Sites page at the new URL, or take it down
 - [ ] Add the site URL to your Google Scholar profile (Homepage field)
 - [ ] Ask UCLA Economics and CCPR to link your site from your profile pages
