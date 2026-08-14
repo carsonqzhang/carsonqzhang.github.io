@@ -41,3 +41,30 @@ The site goes live at `https://<your-github-username>.github.io` within a minute
 ```
 
 Use a unique `id` per abstract (`abs1`, `abs2`, ...).
+
+## Before going live: set your real URL
+
+Every SEO tag currently points at a placeholder. Social previews and the canonical
+tag need absolute URLs, so this must be replaced or link previews break silently.
+
+Run this once from this folder, substituting your real site URL (no trailing slash):
+
+```
+grep -rl 'https://REPLACE-ME.github.io' . --exclude-dir=.git | xargs sed -i '' 's|https://REPLACE-ME.github.io|https://YOUR-REAL-URL|g'
+```
+
+Verify nothing is left:
+
+```
+grep -r 'REPLACE-ME' . --exclude-dir=.git
+```
+
+## SEO checklist
+
+- [ ] Replace the placeholder URL (above)
+- [ ] Push to a **public** repo named `<username>.github.io`, enable Pages
+- [ ] Point the old Google Sites page at the new URL, or take it down
+- [ ] Add the site URL to your Google Scholar profile (Homepage field)
+- [ ] Ask UCLA Economics and CCPR to link your site from your profile pages
+- [ ] Update the URL printed on CV.pdf
+- [ ] Add the property in Google Search Console and submit `sitemap.xml`
