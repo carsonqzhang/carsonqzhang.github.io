@@ -27,7 +27,7 @@ The site goes live at `https://<your-github-username>.github.io` within a minute
 
 ## Editing
 
-- **Photo:** drop a file named `Profile.jpg` in this folder. Until one exists the photo block hides itself.
+- **Photo:** replace `Photo.jpg`.
 - **CV:** replace `CV.pdf`.
 - **Papers:** each entry is a `<div class="paper">` block. Copy an existing one to add another.
 - **Abstracts / paper links:** the template supports collapsible abstracts. Add inside a `.paper`:
