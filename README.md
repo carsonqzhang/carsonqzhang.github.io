@@ -52,12 +52,3 @@ domain, update it everywhere with:
 grep -rl 'https://carsonqzhang.github.io' . --exclude-dir=.git | xargs sed -i '' 's|https://carsonqzhang.github.io|https://NEW-DOMAIN|g'
 ```
 
-## SEO checklist
-
-- [x] Replace the placeholder URL
-- [x] Push to a **public** repo named `carsonqzhang.github.io`, enable Pages
-- [ ] Point the old Google Sites page at the new URL, or take it down
-- [ ] Add the site URL to your Google Scholar profile (Homepage field)
-- [ ] Ask UCLA Economics and CCPR to link your site from your profile pages
-- [ ] Update the URL printed on CV.pdf
-- [ ] Add the property in Google Search Console and submit `sitemap.xml`
