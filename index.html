@@ -526,7 +526,6 @@
         <a href="#working-papers"><span class="num">02</span> Working Papers</a>
         <a href="#work-in-progress"><span class="num">03</span> Work in Progress</a>
         <a href="#publications"><span class="num">04</span> Publications</a>
-        <a href="#media"><span class="num">05</span> Media</a>
       </nav>
 
       <!-- About -->
@@ -597,20 +596,6 @@
           </div>
         </div>
 
-      <!-- Media -->
-      <h2 id="media">Media</h2>
-
-        <!-- Add one block per item. Duplicate and edit:
-        <div class="paper">
-          <div class="paper-title">Headline of the piece</div>
-          <div class="paper-info">Outlet &middot; Month Year</div>
-          <div class="paper-links">
-            <a href="https://..." target="_blank">[Link]</a>
-          </div>
-        </div>
-        -->
-        <p class="intro">Coming soon.</p>
-
     </div>
   </div>
 
@@ -650,7 +635,7 @@
 
     /* ── Active nav on scroll ── */
     const navLinks = document.querySelectorAll('.main-nav a');
-    const sections = ['about','working-papers','work-in-progress','publications','media']
+    const sections = ['about','working-papers','work-in-progress','publications']
       .map(id => document.getElementById(id)).filter(Boolean);
 
     function updateActive() {
