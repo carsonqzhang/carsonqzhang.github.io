@@ -194,6 +194,9 @@
   .profile-img {
     width: 230px; height: 307px;
     object-fit: cover;
+    /* Horizontal crop of a landscape source. 50% = centered on the image,
+       higher % pans the crop right. 58% centers it on the subject. */
+    object-position: 58% 50%;
     display: block;
     box-shadow: 0 2px 14px rgba(0,0,0,0.09);
     transition: filter 0.6s ease;
