@@ -14,13 +14,11 @@
 <meta property="og:title" content="Carson Zhang | PhD Candidate in Economics, UCLA">
 <meta property="og:description" content="PhD Candidate in Economics at UCLA and CCPR affiliate. Research on health economics, public economics, and the long-run effects of childhood health care access.">
 <meta property="og:url" content="https://carsonqzhang.github.io/">
-<meta property="og:image" content="https://carsonqzhang.github.io/Photo.jpg">
 <meta property="profile:first_name" content="Carson">
 <meta property="profile:last_name" content="Zhang">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Carson Zhang | PhD Candidate in Economics, UCLA">
 <meta name="twitter:description" content="PhD Candidate in Economics at UCLA and CCPR affiliate. Research on health economics, public economics, and the long-run effects of childhood health care access.">
-<meta name="twitter:image" content="https://carsonqzhang.github.io/Photo.jpg">
 
 <!-- Structured data: feeds Google's knowledge panel -->
 <script type="application/ld+json">
@@ -33,7 +31,6 @@
   "jobTitle": "PhD Candidate in Economics",
   "email": "mailto:carsonzhang@g.ucla.edu",
   "url": "https://carsonqzhang.github.io/",
-  "image": "https://carsonqzhang.github.io/Photo.jpg",
   "affiliation": [
     { "@type": "CollegeOrUniversity", "name": "University of California, Los Angeles", "url": "https://economics.ucla.edu/" },
     { "@type": "Organization", "name": "California Center for Population Research", "url": "https://ccpr.ucla.edu/" }
@@ -182,43 +179,6 @@
     color: var(--text);
     line-height: 1.15;
   }
-
-  .profile-photo {
-    position: relative;
-    display: inline-block;
-    margin-bottom: 22px;
-    cursor: pointer;
-    border-radius: 4px;
-    overflow: hidden;
-  }
-  .profile-img {
-    width: 230px; height: 307px;
-    object-fit: cover;
-    /* Photo.jpg is landscape, so it is cropped horizontally to fit this
-       portrait frame. Higher % pans the crop right (subject moves left).
-       Measured for this photo: body centres at 49%, face at 52%; 50% keeps
-       both within ~2px of centre. Re-measure if you swap the photo. */
-    object-position: 50% 50%;
-    display: block;
-    box-shadow: 0 2px 14px rgba(0,0,0,0.09);
-    transition: filter 0.6s ease;
-  }
-  .photo-caption {
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    padding: 10px 12px;
-    color: #fdfcf8;
-    font-family: 'Source Serif 4', Georgia, serif;
-    font-size: 10px;
-    font-style: italic;
-    line-height: 1.4;
-    text-align: center;
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    pointer-events: none;
-  }
-  .profile-photo.bw .profile-img { filter: grayscale(100%); }
-  .profile-photo.bw .photo-caption { opacity: 1; }
 
   .title { color: var(--text); font-size: 12px; font-weight: 500; letter-spacing: 0.2px; }
   .affiliation { color: var(--text-muted); font-size: 11.5px; margin-top: 1px; }
@@ -520,8 +480,6 @@
   @media (max-width: 768px) {
     .container { grid-template-columns: 1fr; padding: 36px 24px; gap: 44px; }
     .sidebar { position: static; max-height: none; overflow: visible; }
-    .profile-photo { margin-bottom: 24px; }
-    .profile-img { width: 200px; height: 267px; }
     .theme-toggle { top: 16px; right: 16px; }
     .main-nav { display: none; }
     .affiliation-wrap { display: block; }
@@ -537,12 +495,6 @@
   <div class="container">
     <div class="sidebar">
       <div class="name">Carson Zhang</div>
-      <!-- Photo.jpg lives next to index.html. Swap the file to change the portrait. -->
-      <div class="profile-photo" onclick="showBW(this)">
-        <img src="Photo.jpg" alt="Carson Zhang" class="profile-img"
-             onerror="this.closest('.profile-photo').style.display='none'">
-        <div class="photo-caption">Los Angeles</div>
-      </div>
       <div>
         <div class="affiliation-wrap">
           <div class="title">PhD Candidate in Economics</div>
@@ -658,12 +610,6 @@
       btn.style.animation = 'none';
       btn.offsetHeight; /* reflow */
       btn.style.animation = 'themeSpin 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
-    }
-
-    function showBW(el) {
-      el.classList.add('bw');
-      clearTimeout(el._bwTimer);
-      el._bwTimer = setTimeout(() => el.classList.remove('bw'), 3000);
     }
 
     function toggle(id) {
