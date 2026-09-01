@@ -441,46 +441,105 @@
     .main-nav { display: none; }
     .affiliation-wrap { display: block; }
   }
+
+  /* ═══ TOP-NAV LAYOUT (overrides the sidebar grid above) ═══ */
+  .container { display: block; max-width: none; margin: 0; padding: 0; }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 36px; }
+
+  .masthead { padding: 60px 0 26px; text-align: center; }
+  .masthead .name {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 40px; font-weight: 500; letter-spacing: -0.6px;
+    line-height: 1.1; margin-bottom: 12px; color: var(--text);
+  }
+  .masthead .role {
+    font-size: 13px; color: var(--text-secondary); font-weight: 500;
+    letter-spacing: 0.2px; margin-bottom: 6px;
+  }
+  .masthead .role .sep { color: var(--border); margin: 0 8px; }
+  .masthead .where { font-size: 12px; color: var(--text-muted); margin-bottom: 18px; }
+  .masthead .actions {
+    display: flex; align-items: center; justify-content: center;
+    gap: 18px; flex-wrap: wrap;
+  }
+  .masthead .cv-btn { margin-bottom: 0; }
+  .masthead .contact a { margin-bottom: 0; font-size: 13px; }
+  .masthead .social { margin-top: 0; }
+
+  /* sticky horizontal nav */
+  .topnav {
+    position: sticky; top: 0; z-index: 50;
+    background: var(--bg);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .topnav .main-nav {
+    margin-bottom: 0; justify-content: center;
+    gap: 34px; padding: 13px 36px;
+  }
+  .content { padding: 44px 0 90px; }
+  .content .main h2:first-of-type { margin-top: 0; }
+
+  /* decorative divider under the masthead */
+  .masthead .sidebar-nav { margin-top: 22px; }
+
+  @media (max-width: 768px) {
+    .wrap { padding: 0 22px; }
+    .masthead { padding: 40px 0 20px; }
+    .masthead .name { font-size: 31px; }
+    /* keep the nav visible here -- it is the only nav in this layout */
+    .topnav .main-nav {
+      display: flex; gap: 18px; padding: 11px 22px;
+      justify-content: flex-start; overflow-x: auto;
+      flex-wrap: nowrap;
+      scrollbar-width: none; -webkit-overflow-scrolling: touch;
+    }
+    .topnav .main-nav::-webkit-scrollbar { display: none; }
+    .topnav .main-nav a { white-space: nowrap; }
+    .content { padding: 30px 0 60px; }
+  }
 </style>
 </head>
 <body>
   <div class="container">
-    <div class="sidebar">
-      <div class="name">Carson Zhang</div>
-      <div>
-        <div class="affiliation-wrap">
-          <div class="title">PhD Candidate in Economics</div>
-          <div class="affiliation">University of California, Los Angeles</div>
-        </div>
-        <a href="CV.pdf" class="cv-btn" target="_blank">Download CV</a>
-        <div class="contact">
-          <a href="mailto:carsonzhang@g.ucla.edu">carsonzhang@g.ucla.edu</a>
-        </div>
-        <div class="address">Bunche Hall 8283<br>Department of Economics, UCLA<br>315 Portola Plaza<br>Los Angeles, CA 90095</div>
-      </div>
-      <div class="social">
-        <a href="https://economics.ucla.edu/person/quan-carson-zhang/" title="UCLA Economics Profile" target="_blank"><svg viewBox="0 0 24 24"><path d="M4 10v7h3v-7H4zm6 0v7h3v-7h-3zM2 22h19v-3H2v3zm14-12v7h3v-7h-3zM11.5 1L2 6v2h19V6l-9.5-5z"/></svg></a>
-        <a href="https://scholar.google.com/citations?user=W2_bdOMAAAAJ&amp;hl=en" title="Google Scholar" target="_blank"><svg viewBox="0 0 24 24"><path d="M12 24a7 7 0 110-14 7 7 0 010 14zm0-24L0 9.5l4.838 3.94A8 8 0 0112 9a8 8 0 017.162 4.44L24 9.5z"/></svg></a>
-      </div>
-      <div class="sidebar-nav" id="sidebar-nav">
-        <div class="div-seg left l"></div>
-        <div class="div-seg left m"></div>
-        <div class="div-seg left s"></div>
-        <div class="div-circle"></div>
-        <div class="div-seg right s"></div>
-        <div class="div-seg right m"></div>
-        <div class="div-seg right l"></div>
-      </div>
-    </div>
 
-    <div class="main">
-      <nav class="main-nav">
+    <header class="masthead">
+      <div class="wrap">
+        <h1 class="name">Carson Zhang</h1>
+        <div class="role">PhD Candidate in Economics<span class="sep">/</span>University of California, Los Angeles</div>
+        <div class="where">Bunche Hall 8283 &middot; 315 Portola Plaza, Los Angeles, CA 90095</div>
+        <div class="actions">
+          <a href="CV.pdf" class="cv-btn" target="_blank">Download CV</a>
+          <div class="contact"><a href="mailto:carsonzhang@g.ucla.edu">carsonzhang@g.ucla.edu</a></div>
+          <div class="social">
+            <a href="https://economics.ucla.edu/person/quan-carson-zhang/" title="UCLA Economics Profile" target="_blank"><svg viewBox="0 0 24 24"><path d="M4 10v7h3v-7H4zm6 0v7h3v-7h-3zM2 22h19v-3H2v3zm14-12v7h3v-7h-3zM11.5 1L2 6v2h19V6l-9.5-5z"/></svg></a>
+            <a href="https://scholar.google.com/citations?user=W2_bdOMAAAAJ&amp;hl=en" title="Google Scholar" target="_blank"><svg viewBox="0 0 24 24"><path d="M12 24a7 7 0 110-14 7 7 0 010 14zm0-24L0 9.5l4.838 3.94A8 8 0 0112 9a8 8 0 017.162 4.44L24 9.5z"/></svg></a>
+          </div>
+        </div>
+        <div class="sidebar-nav" id="sidebar-nav">
+          <div class="div-seg left l"></div>
+          <div class="div-seg left m"></div>
+          <div class="div-seg left s"></div>
+          <div class="div-circle"></div>
+          <div class="div-seg right s"></div>
+          <div class="div-seg right m"></div>
+          <div class="div-seg right l"></div>
+        </div>
+      </div>
+    </header>
+
+    <div class="topnav">
+      <nav class="main-nav wrap">
         <a href="#about"><span class="num">01</span> About</a>
         <a href="#working-papers"><span class="num">02</span> Working Papers</a>
         <a href="#work-in-progress"><span class="num">03</span> Work in Progress</a>
         <a href="#publications"><span class="num">04</span> Publications</a>
       </nav>
+    </div>
 
+    <div class="content">
+      <div class="wrap">
+        <div class="main">
       <!-- About -->
       <h2 id="about">About</h2>
       <p class="intro">I am a PhD Candidate in Economics at the <a href="https://economics.ucla.edu/" target="_blank" class="berkeley-link">University of California, Los Angeles</a> and an affiliate of the <a href="https://ccpr.ucla.edu/" target="_blank" class="berkeley-link">California Center for Population Research (CCPR)</a>, where I expect to graduate in 2028.</p>
@@ -548,8 +607,10 @@
             <a href="https://link.springer.com/article/10.1186/s12877-022-03154-9" target="_blank">[Published Version]</a>
           </div>
         </div>
-
+        </div>
+      </div>
     </div>
+
   </div>
 
   <script>
