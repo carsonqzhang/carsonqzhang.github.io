@@ -45,7 +45,7 @@
 }
 </script>
 
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23c97560'/><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Georgia,serif' font-size='13' font-weight='600' fill='%23fdfcf8'>CZ</text></svg>">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23346a59'/><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Georgia,serif' font-size='13' font-weight='600' fill='%23fdfcf8'>CZ</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap" rel="stylesheet">
 <style>
@@ -53,27 +53,15 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   :root {
-    --bg: #fcfaf5;
-    --text: #0a0a0a;
-    --text-secondary: #3a3a3a;
-    --text-muted: #6b6b6b;
-    --blue: #3a64a8;
-    --blue-light: #ecf0f7;
-    --coral: #c97560;
-    --border: #d8d6d0;
-    --card-bg: #fcfaf5;
-  }
-
-  [data-theme="dark"] {
-    --bg: #171b22;
-    --text: #dde3ed;
-    --text-secondary: #9aa4b5;
-    --text-muted: #6b7585;
-    --blue: #8aa8d8;
-    --blue-light: #1e2530;
-    --coral: #e09984;
-    --border: #2a3040;
-    --card-bg: #1e2530;
+    --bg: #eef2f5;
+    --text: #10161c;
+    --text-secondary: #39434d;
+    --text-muted: #626c76;
+    --blue: #2f5d9e;
+    --blue-light: #dfe8f3;
+    --accent: #346a59;
+    --border: #ccd5dc;
+    --card-bg: #eef2f5;
   }
 
   body {
@@ -109,13 +97,6 @@
     transition: border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.2s,
                 color 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
   }
-  .theme-toggle {
-    transition: border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.1s,
-                background 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
-  }
-  .theme-toggle svg {
-    transition: stroke 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
-  }
 
   ::selection { background: var(--blue); color: var(--bg); }
 
@@ -127,26 +108,6 @@
     from { opacity: 0; }
     to   { opacity: 1; }
   }
-
-  @keyframes themeSpin {
-    0%   { transform: rotate(0deg)   scale(1); }
-    40%  { transform: rotate(200deg) scale(0.85); }
-    100% { transform: rotate(360deg) scale(1); }
-  }
-
-  /* ── Theme toggle ── */
-  .theme-toggle {
-    position: fixed; top: 24px; right: 24px;
-    width: 40px; height: 40px;
-    border: 1.5px solid var(--border);
-    border-radius: 50%;
-    background: var(--card-bg);
-    cursor: pointer;
-    display: flex; align-items: center; justify-content: center;
-    z-index: 100; transition: all 0.2s;
-  }
-  .theme-toggle:hover { border-color: var(--blue); }
-  .theme-toggle svg { width: 17px; height: 17px; stroke: var(--text); fill: none; stroke-width: 1.5; }
 
   /* ── Layout ── */
   .container {
@@ -235,7 +196,7 @@
   .div-circle {
     width: 10px; height: 10px;
     border-radius: 50%;
-    background: var(--coral);
+    background: var(--accent);
     flex-shrink: 0;
     transform: scale(0);
   }
@@ -275,13 +236,13 @@
   }
   .main-nav a .num {
     font-size: 9px; font-weight: 400;
-    color: var(--coral); letter-spacing: 0;
+    color: var(--accent); letter-spacing: 0;
     transition: color 0.2s;
   }
   .main-nav a:hover { color: var(--blue); }
   .main-nav a:hover .num { color: var(--blue); }
   .main-nav a.active { color: var(--text); }
-  .main-nav a.active .num { color: var(--coral); }
+  .main-nav a.active .num { color: var(--accent); }
 
   /* ── Section headings ── */
   .main { counter-reset: section; }
@@ -292,7 +253,7 @@
     font-weight: 700;
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    color: var(--coral);
+    color: var(--accent);
     margin-bottom: 18px;
     margin-top: 32px;
     padding-bottom: 10px;
@@ -310,11 +271,8 @@
   .intro { font-size: 13px; line-height: 1.85; color: var(--text-secondary); margin-bottom: 12px; }
 
   .phrase-highlight {
-    background: linear-gradient(180deg, transparent 58%, rgba(201,117,96,0.2) 58%);
+    background: linear-gradient(180deg, transparent 58%, rgba(52,106,89,0.18) 58%);
     padding: 0 1px;
-  }
-  [data-theme="dark"] .phrase-highlight {
-    background: linear-gradient(180deg, transparent 58%, rgba(224,153,132,0.18) 58%);
   }
 
   .berkeley-link {
@@ -368,7 +326,7 @@
     text-decoration: none;
     transition: color 0.2s ease;
   }
-  .coauthors a:hover { color: var(--coral); }
+  .coauthors a:hover { color: var(--accent); }
   .paper-info { color: var(--text-muted); font-size: 11px; font-weight: 600; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.5px; }
 
   .award {
@@ -480,18 +438,12 @@
   @media (max-width: 768px) {
     .container { grid-template-columns: 1fr; padding: 36px 24px; gap: 44px; }
     .sidebar { position: static; max-height: none; overflow: visible; }
-    .theme-toggle { top: 16px; right: 16px; }
     .main-nav { display: none; }
     .affiliation-wrap { display: block; }
   }
 </style>
 </head>
 <body>
-  <button class="theme-toggle" onclick="toggleTheme()">
-    <svg viewBox="0 0 24 24" class="moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-    <svg viewBox="0 0 24 24" class="sun" style="display:none"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-  </button>
-
   <div class="container">
     <div class="sidebar">
       <div class="name">Carson Zhang</div>
@@ -601,17 +553,6 @@
   </div>
 
   <script>
-    function toggleTheme() {
-      const t = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', t);
-      document.querySelector('.moon').style.display = t === 'dark' ? 'none' : 'block';
-      document.querySelector('.sun').style.display  = t === 'dark' ? 'block' : 'none';
-      const btn = document.querySelector('.theme-toggle');
-      btn.style.animation = 'none';
-      btn.offsetHeight; /* reflow */
-      btn.style.animation = 'themeSpin 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
-    }
-
     function toggle(id) {
       const el = document.getElementById(id);
       el.classList.toggle('show');
