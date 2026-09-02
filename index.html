@@ -489,15 +489,11 @@
     border-bottom: 1px solid var(--border);
   }
   .topnav .navbar {
-    display: flex; align-items: center; justify-content: space-between;
+    display: flex; align-items: center; justify-content: center;
     gap: 24px; padding: 13px 36px;
   }
   .topnav .main-nav { margin-bottom: 0; gap: 30px; padding: 0; }
-  .nav-email {
-    font-size: 12px; font-weight: 500; color: var(--text-muted);
-    text-decoration: none; white-space: nowrap; transition: color 0.2s;
-  }
-  .nav-email:hover { color: var(--blue); }
+
   .content { padding: 44px 0 70px; }
   /* narrower measure for body copy -- long lines are hard to track */
   .content .wrap { max-width: 620px; }
@@ -524,7 +520,6 @@
   @media (max-width: 768px) {
     .wrap { padding: 0 22px; }
     .topnav .navbar { padding: 11px 22px; gap: 14px; }
-    .nav-email { display: none; }   /* footer carries it on small screens */
     .masthead { padding: 40px 0 20px; }
     .masthead .name { font-size: 31px; }
     /* keep the nav visible here -- it is the only nav in this layout */
@@ -572,7 +567,6 @@
         <a href="#work-in-progress"><span class="num">03</span> Work in Progress</a>
         <a href="#publications"><span class="num">04</span> Publications</a>
       </nav>
-      <a class="nav-email" href="mailto:carsonzhang@g.ucla.edu">carsonzhang@g.ucla.edu</a>
       </div>
     </div>
 
