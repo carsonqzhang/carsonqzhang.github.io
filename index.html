@@ -464,7 +464,13 @@
   }
   .masthead .cv-btn { margin-bottom: 0; }
   .masthead .contact a { margin-bottom: 0; font-size: 13px; }
-  .masthead .social { margin-top: 0; }
+  .masthead .social { margin-top: 14px; gap: 22px; }
+  .masthead .social a {
+    gap: 6px; font-size: 12px; font-weight: 500;
+    color: var(--text-muted); text-decoration: none;
+  }
+  .masthead .social a:hover { color: var(--blue); }
+  .masthead .social svg { width: 14px; height: 14px; }
 
   /* sticky horizontal nav */
   .topnav {
@@ -511,10 +517,10 @@
         <div class="actions">
           <a href="CV.pdf" class="cv-btn" target="_blank">Download CV</a>
           <div class="contact"><a href="mailto:carsonzhang@g.ucla.edu">carsonzhang@g.ucla.edu</a></div>
-          <div class="social">
-            <a href="https://economics.ucla.edu/person/quan-carson-zhang/" title="UCLA Economics Profile" target="_blank"><svg viewBox="0 0 24 24"><path d="M4 10v7h3v-7H4zm6 0v7h3v-7h-3zM2 22h19v-3H2v3zm14-12v7h3v-7h-3zM11.5 1L2 6v2h19V6l-9.5-5z"/></svg></a>
-            <a href="https://scholar.google.com/citations?user=W2_bdOMAAAAJ&amp;hl=en" title="Google Scholar" target="_blank"><svg viewBox="0 0 24 24"><path d="M12 24a7 7 0 110-14 7 7 0 010 14zm0-24L0 9.5l4.838 3.94A8 8 0 0112 9a8 8 0 017.162 4.44L24 9.5z"/></svg></a>
-          </div>
+        </div>
+        <div class="social">
+          <a href="https://economics.ucla.edu/person/quan-carson-zhang/" target="_blank"><svg viewBox="0 0 24 24"><path d="M4 10v7h3v-7H4zm6 0v7h3v-7h-3zM2 22h19v-3H2v3zm14-12v7h3v-7h-3zM11.5 1L2 6v2h19V6l-9.5-5z"/></svg>UCLA Economics</a>
+          <a href="https://scholar.google.com/citations?user=W2_bdOMAAAAJ&amp;hl=en" target="_blank"><svg viewBox="0 0 24 24"><path d="M12 24a7 7 0 110-14 7 7 0 010 14zm0-24L0 9.5l4.838 3.94A8 8 0 0112 9a8 8 0 017.162 4.44L24 9.5z"/></svg>Google Scholar</a>
         </div>
         <div class="sidebar-nav" id="sidebar-nav">
           <div class="div-seg left l"></div>
