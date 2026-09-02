@@ -69,7 +69,7 @@
     background: var(--bg);
     color: var(--text);
     line-height: 1.75;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
     transition: background 0.5s cubic-bezier(0.4, 0, 0.2, 1),
@@ -225,6 +225,9 @@
   @keyframes divCirc { to { transform: scale(1); } }
   @keyframes divSeg  { to { opacity: 0.5; transform: scaleX(1); } }
 
+  @keyframes divCirc { to { transform: scale(1); } }
+  @keyframes divSeg  { to { opacity: 0.5; transform: scaleX(1); } }
+
   /* ── Main nav ── */
   .main-nav { display: flex; gap: 28px; margin-bottom: 36px; flex-wrap: wrap; }
   .main-nav a {
@@ -258,7 +261,7 @@
     margin-top: 32px;
     padding-bottom: 10px;
     border-bottom: 1px solid var(--border);
-    scroll-margin-top: 30px;
+    scroll-margin-top: 72px;
     counter-increment: section;
   }
   .main h2::before {
@@ -268,7 +271,7 @@
   }
   .main h2:first-of-type { margin-top: 0; }
 
-  .intro { font-size: 13px; line-height: 1.85; color: var(--text-secondary); margin-bottom: 12px; }
+  .intro { font-size: 14.5px; line-height: 1.85; color: var(--text-secondary); margin-bottom: 12px; }
 
   .phrase-highlight {
     background: linear-gradient(180deg, transparent 58%, rgba(52,106,89,0.18) 58%);
@@ -283,9 +286,11 @@
 
   /* ── Papers ── */
   .paper {
-    margin-bottom: 22px;
-    padding-bottom: 4px;
+    margin-bottom: 26px;
+    padding-bottom: 26px;
+    border-bottom: 1px solid var(--border);
   }
+  .paper:last-child { border-bottom: none; padding-bottom: 4px; }
   .paper:last-child { margin-bottom: 0; }
 
   .paper-title {
@@ -368,6 +373,18 @@
   .paper-links a:hover { opacity: 0.5; }
   .paper-links a.disabled { color: var(--text-muted); cursor: default; font-weight: 400; }
   .paper-links a.disabled:hover { opacity: 1; }
+  .paper-links a.toggle-link {
+    background: var(--blue-light);
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    transition: background 0.2s, color 0.2s;
+  }
+  .paper-links a.toggle-link:hover {
+    background: var(--blue); color: var(--bg); opacity: 1;
+  }
 
   /* Classic expandable — smooth slide */
   .expandable {
@@ -375,7 +392,7 @@
     overflow: hidden;
     margin-top: 0;
     padding: 0 18px;
-    font-size: 13px;
+    font-size: 14px;
     line-height: 1.85;
     color: var(--text-secondary);
     border-left: 2px solid var(--blue);
@@ -464,13 +481,7 @@
   }
   .masthead .cv-btn { margin-bottom: 0; }
   .masthead .contact a { margin-bottom: 0; font-size: 13px; }
-  .masthead .social { margin-top: 14px; gap: 22px; }
-  .masthead .social a {
-    gap: 6px; font-size: 12px; font-weight: 500;
-    color: var(--text-muted); text-decoration: none;
-  }
-  .masthead .social a:hover { color: var(--blue); }
-  .masthead .social svg { width: 14px; height: 14px; }
+
 
   /* sticky horizontal nav */
   .topnav {
@@ -479,18 +490,43 @@
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
   }
-  .topnav .main-nav {
-    margin-bottom: 0; justify-content: center;
-    gap: 34px; padding: 13px 36px;
+  .topnav .navbar {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 24px; padding: 13px 36px;
   }
-  .content { padding: 44px 0 90px; }
+  .topnav .main-nav { margin-bottom: 0; gap: 30px; padding: 0; }
+  .nav-email {
+    font-size: 12px; font-weight: 500; color: var(--text-muted);
+    text-decoration: none; white-space: nowrap; transition: color 0.2s;
+  }
+  .nav-email:hover { color: var(--blue); }
+  .content { padding: 44px 0 70px; }
+  /* narrower measure for body copy -- long lines are hard to track */
+  .content .wrap { max-width: 620px; }
   .content .main h2:first-of-type { margin-top: 0; }
 
   /* decorative divider under the masthead */
   .masthead .sidebar-nav { margin-top: 22px; }
 
+  .site-footer {
+    border-top: 1px solid var(--border);
+    padding: 26px 0 44px;
+    text-align: center;
+  }
+  .site-footer .foot-links { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+  .site-footer a {
+    font-size: 12.5px; font-weight: 500;
+    color: var(--blue); text-decoration: none;
+  }
+  .site-footer a:hover { text-decoration: underline; }
+  .site-footer .updated {
+    margin-top: 10px; font-size: 11.5px; color: var(--text-muted);
+  }
+
   @media (max-width: 768px) {
     .wrap { padding: 0 22px; }
+    .topnav .navbar { padding: 11px 22px; gap: 14px; }
+    .nav-email { display: none; }   /* footer carries it on small screens */
     .masthead { padding: 40px 0 20px; }
     .masthead .name { font-size: 31px; }
     /* keep the nav visible here -- it is the only nav in this layout */
@@ -518,10 +554,6 @@
           <a href="CV.pdf" class="cv-btn" target="_blank">Download CV</a>
           <div class="contact"><a href="mailto:carsonzhang@g.ucla.edu">carsonzhang@g.ucla.edu</a></div>
         </div>
-        <div class="social">
-          <a href="https://economics.ucla.edu/person/quan-carson-zhang/" target="_blank"><svg viewBox="0 0 24 24"><path d="M4 10v7h3v-7H4zm6 0v7h3v-7h-3zM2 22h19v-3H2v3zm14-12v7h3v-7h-3zM11.5 1L2 6v2h19V6l-9.5-5z"/></svg>UCLA Economics</a>
-          <a href="https://scholar.google.com/citations?user=W2_bdOMAAAAJ&amp;hl=en" target="_blank"><svg viewBox="0 0 24 24"><path d="M12 24a7 7 0 110-14 7 7 0 010 14zm0-24L0 9.5l4.838 3.94A8 8 0 0112 9a8 8 0 017.162 4.44L24 9.5z"/></svg>Google Scholar</a>
-        </div>
         <div class="sidebar-nav" id="sidebar-nav">
           <div class="div-seg left l"></div>
           <div class="div-seg left m"></div>
@@ -535,12 +567,15 @@
     </header>
 
     <div class="topnav">
-      <nav class="main-nav wrap">
+      <div class="wrap navbar">
+      <nav class="main-nav">
         <a href="#about"><span class="num">01</span> About</a>
         <a href="#working-papers"><span class="num">02</span> Working Papers</a>
         <a href="#work-in-progress"><span class="num">03</span> Work in Progress</a>
         <a href="#publications"><span class="num">04</span> Publications</a>
       </nav>
+      <a class="nav-email" href="mailto:carsonzhang@g.ucla.edu">carsonzhang@g.ucla.edu</a>
+      </div>
     </div>
 
     <div class="content">
@@ -557,8 +592,8 @@
         <div class="paper">
           <div class="paper-title">The Long Run Effects of Free Childhood Health Care Access: Evidence from the National Health Service in the UK</div>
           <div class="paper-links">
-            <a href="#" onclick="toggle('abs1'); return false;">&#9656; Abstract</a>
-            <a href="#" onclick="toggle('pres1'); return false;">&#9656; Presentations</a>
+            <a class="toggle-link" href="#" onclick="toggle('abs1'); return false;">&#9656; Abstract</a>
+            <a class="toggle-link" href="#" onclick="toggle('pres1'); return false;">&#9656; Presentations</a>
           </div>
           <div class="expandable" id="abs1">This paper estimates the long-run health effects of universal childhood health care access in the UK. The design compares cohorts born in different years relative to the 1948 introduction of the National Health Service (NHS) across birthplaces with different pre-reform health care resources. The NHS immediately leads to lower infant mortality and higher birth weights. Using linked administrative records of approximately 320,000 individuals, I find that free childhood access reduces disease incidence across multiple systems in later life (ages 60&ndash;75), and increases educational attainment and the probability of staying employed. Despite modest individual effects, universal coverage yields fiscal savings that exceed costs and large health gains for the initially affected cohorts.</div>
           <div class="expandable" id="pres1"><strong>Presentations:</strong> 5th Annual Conference of the European Social Science Genetics Network; 2026 All California Labor Economics Conference (ACLEC)</div>
@@ -567,8 +602,8 @@
           <div class="paper-title">The Association Between Income and Adult Life Expectancy in the United States Emerged in the Mid 20th Century</div>
           <div class="coauthors">with Andrew Goodman-Bacon, Adriana Lleras-Muney, Joseph Price, and Dahai Yue</div>
           <div class="paper-links">
-            <a href="#" onclick="toggle('abs2'); return false;">&#9656; Abstract</a>
-            <a href="#" onclick="toggle('pres2'); return false;">&#9656; Presentations</a>
+            <a class="toggle-link" href="#" onclick="toggle('abs2'); return false;">&#9656; Abstract</a>
+            <a class="toggle-link" href="#" onclick="toggle('pres2'); return false;">&#9656; Presentations</a>
           </div>
           <div class="expandable" id="abs2">Today, at age 40, the rich can expect to live almost a decade longer than the poor. However, we find no differences in adult period life expectancy by income in 1940 or 1950. We also find no positive association between income proxies and adult life expectancy for men or women between 1900 and 1950. Two factors help explain this: the rich lived in cities where life expectancy was lower and were more likely to consume goods that cause chronic diseases. Thus income-related disparities in period life expectancy likely emerged around the 1950s, a period of low income inequality but rapid medical innovation. As a result, cohorts who lived more of their adult lives after 1950 had steeper income gradients in realized lifespans.</div>
           <div class="expandable" id="pres2"><strong>Presentations:</strong> 3rd All-UC Demography Conference</div>
@@ -577,8 +612,8 @@
           <div class="paper-title">When Beliefs and Reality Clash: The Impact of Survival Belief Biases on Saving and Wealth Distribution</div>
           <div class="coauthors">with Yaohui Zhao</div>
           <div class="paper-links">
-            <a href="#" onclick="toggle('abs3'); return false;">&#9656; Abstract</a>
-            <a href="#" onclick="toggle('pres3'); return false;">&#9656; Presentations</a>
+            <a class="toggle-link" href="#" onclick="toggle('abs3'); return false;">&#9656; Abstract</a>
+            <a class="toggle-link" href="#" onclick="toggle('pres3'); return false;">&#9656; Presentations</a>
           </div>
           <div class="expandable" id="abs3">This paper studies how biases in survival beliefs, defined as the difference between objective and subjective life expectancy (LE), affect savings decisions and wealth distribution in China, where subjective LE is self-reported and objective LE is model-predicted. We first document that younger individuals (aged 45&ndash;70) underestimate their survival chances, while older individuals (70&ndash;95) overestimate them. These biases appear to be driven by insufficient adjustments of survival beliefs to new health shocks. Using a standard life-cycle model, we show that the age pattern would cause the younger group to undersave by 8.1% (942 RMB), and the older group to oversave by 13.0% (1,226 RMB). More importantly, undersaving at young leads to 36.5% (28,160 RMB) less wealth by age 70, which cannot be compensated by oversaving during the old. Additionally, we find that rural residents, who have a shorter objective LE than urban residents, also tend to underestimate their future survival, thus having a much lower subjective LE. This accounts for 8.4% of the urban-rural wealth disparities, with a significant portion driven by the underestimation of survival among rural residents. Our empirical analysis supports the model prediction: those who overestimate their survival chances tend to save more. Overall, our findings support a new health-wealth channel, namely time preference caused by survival belief differences.</div>
           <div class="expandable" id="pres3"><strong>Presentations:</strong> 2023 Asian Meeting of the Econometric Society</div>
@@ -616,6 +651,18 @@
         </div>
       </div>
     </div>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="foot-links">
+          <a href="mailto:carsonzhang@g.ucla.edu">carsonzhang@g.ucla.edu</a>
+          <a href="CV.pdf" target="_blank">Curriculum Vitae</a>
+          <a href="https://economics.ucla.edu/person/quan-carson-zhang/" target="_blank">UCLA Economics</a>
+          <a href="https://scholar.google.com/citations?user=W2_bdOMAAAAJ&amp;hl=en" target="_blank">Google Scholar</a>
+        </div>
+        <div class="updated">Carson Zhang &middot; Department of Economics, UCLA &middot; Updated September 2026</div>
+      </div>
+    </footer>
 
   </div>
 
