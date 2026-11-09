@@ -14,11 +14,17 @@
 <meta property="og:title" content="Carson Zhang | PhD Candidate in Economics, UCLA">
 <meta property="og:description" content="PhD Candidate in Economics at UCLA and CCPR affiliate. Research on health economics, public economics, and the long-run effects of childhood health care access.">
 <meta property="og:url" content="https://carsonqzhang.github.io/">
+<meta property="og:image" content="https://carsonqzhang.github.io/Photo.jpg">
+<meta property="og:image:width" content="600">
+<meta property="og:image:height" content="600">
+<meta property="og:image:alt" content="Carson Zhang">
 <meta property="profile:first_name" content="Carson">
 <meta property="profile:last_name" content="Zhang">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Carson Zhang | PhD Candidate in Economics, UCLA">
 <meta name="twitter:description" content="PhD Candidate in Economics at UCLA and CCPR affiliate. Research on health economics, public economics, and the long-run effects of childhood health care access.">
+<meta name="twitter:image" content="https://carsonqzhang.github.io/Photo.jpg">
+<meta name="twitter:image:alt" content="Carson Zhang">
 
 <!-- Structured data: feeds Google's knowledge panel -->
 <script type="application/ld+json">
@@ -31,6 +37,7 @@
   "jobTitle": "PhD Candidate in Economics",
   "email": "mailto:carsonzhang@g.ucla.edu",
   "url": "https://carsonqzhang.github.io/",
+  "image": "https://carsonqzhang.github.io/Photo.jpg",
   "affiliation": [
     { "@type": "CollegeOrUniversity", "name": "University of California, Los Angeles", "url": "https://economics.ucla.edu/" },
     { "@type": "Organization", "name": "California Center for Population Research", "url": "https://ccpr.ucla.edu/" }
@@ -533,6 +540,19 @@
     .topnav .main-nav a { white-space: nowrap; }
     .content { padding: 30px 0 60px; }
   }
+
+  /* profile photo beside the name block */
+  .masthead .intro-row { display: flex; align-items: center; justify-content: center; gap: 48px; text-align: left; }
+  .masthead .avatar {
+    width: 230px; height: 230px; border-radius: 50%; object-fit: cover; flex-shrink: 0;
+    box-shadow: 0 0 0 4px var(--bg), 0 0 0 5px var(--border), 0 8px 22px rgba(16,22,28,0.12);
+  }
+  .masthead .intro-row .actions { justify-content: flex-start; }
+  @media (max-width: 768px) {
+    .masthead .intro-row { flex-direction: column; text-align: center; gap: 18px; }
+    .masthead .intro-row .actions { justify-content: center; }
+    .masthead .avatar { width: 160px; height: 160px; }
+  }
 </style>
 </head>
 <body>
@@ -540,12 +560,17 @@
 
     <header class="masthead">
       <div class="wrap">
-        <h1 class="name">Carson Zhang</h1>
-        <div class="role">PhD Candidate in Economics<span class="sep">/</span>University of California, Los Angeles</div>
-        <div class="where">Bunche Hall 8283 &middot; 315 Portola Plaza, Los Angeles, CA 90095</div>
-        <div class="actions">
-          <a href="CV.pdf" class="cv-btn" target="_blank">Download CV</a>
-          <div class="contact"><a href="mailto:carsonzhang@g.ucla.edu">carsonzhang@g.ucla.edu</a></div>
+        <div class="intro-row">
+          <img class="avatar" src="Photo.jpg" alt="Carson Zhang" width="230" height="230">
+          <div class="intro-text">
+            <h1 class="name">Carson Zhang</h1>
+            <div class="role">PhD Candidate in Economics<span class="sep">/</span>University of California, Los Angeles</div>
+            <div class="where">Bunche Hall 8283 &middot; 315 Portola Plaza, Los Angeles, CA 90095</div>
+            <div class="actions">
+              <a href="CV.pdf" class="cv-btn" target="_blank">Download CV</a>
+              <div class="contact"><a href="mailto:carsonzhang@g.ucla.edu">carsonzhang@g.ucla.edu</a></div>
+            </div>
+          </div>
         </div>
         <div class="sidebar-nav" id="sidebar-nav">
           <div class="div-seg left l"></div>
