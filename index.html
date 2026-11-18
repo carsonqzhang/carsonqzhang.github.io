@@ -477,11 +477,9 @@
   .sidebar .affiliation { font-size: 12.5px; margin-bottom: 4px; }
   .sidebar .contact a { font-size: 12.5px; margin-bottom: 0; }
   .sidebar .actions { display: flex; gap: 8px; justify-content: center; margin-top: 12px; }
+  .sidebar .actions + .actions { margin-top: 8px; }
   .sidebar .cv-btn { margin-bottom: 0; }
   .sidebar .address { margin-top: 14px; }
-  .sidebar .side-links { display: flex; gap: 14px; justify-content: center; margin-top: 10px; }
-  .sidebar .side-links a { font-size: 12px; font-weight: 500; color: var(--blue); text-decoration: none; }
-  .sidebar .side-links a:hover { text-decoration: underline; }
   .sidebar .sidebar-nav { margin-top: 22px; }
 
   .main-nav { margin-bottom: 34px; }
@@ -512,11 +510,11 @@
         <a href="CV.pdf" class="cv-btn" target="_blank">Download CV</a>
         <a href="mailto:carsonzhang@g.ucla.edu" class="cv-btn">Email</a>
       </div>
-      <div class="address">Bunche Hall 8283<br>315 Portola Plaza<br>Los Angeles, CA 90095</div>
-      <div class="side-links">
-        <a href="https://scholar.google.com/citations?user=W2_bdOMAAAAJ&amp;hl=en" target="_blank">Google Scholar</a>
-        <a href="https://economics.ucla.edu/person/quan-carson-zhang/" target="_blank">UCLA Economics</a>
+      <div class="actions">
+        <a href="https://scholar.google.com/citations?user=W2_bdOMAAAAJ&amp;hl=en" class="cv-btn" target="_blank">Google Scholar</a>
+        <a href="https://economics.ucla.edu/person/quan-carson-zhang/" class="cv-btn" target="_blank">UCLA Economics</a>
       </div>
+      <div class="address">Bunche Hall 8283<br>315 Portola Plaza<br>Los Angeles, CA 90095</div>
       <div class="sidebar-nav" id="sidebar-nav">
         <div class="div-seg left l"></div>
         <div class="div-seg left m"></div>
