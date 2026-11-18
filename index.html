@@ -54,7 +54,7 @@
 
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23346a59'/><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Georgia,serif' font-size='13' font-weight='600' fill='%23fdfcf8'>CZ</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   html { scroll-behavior: smooth; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -489,6 +489,60 @@
     .main-nav::-webkit-scrollbar { display: none; }
     .main-nav a { white-space: nowrap; }
   }
+
+  /* ═══ LOOK: clean white, Geist type, navy headings, gold numbers ═══ */
+  :root {
+    --bg: #ffffff;
+    --text: #0a0a0a;
+    --text-secondary: #3a3a3a;
+    --text-muted: #6b6b6b;
+    --blue: #002676;
+    --blue-light: #e8ecf4;
+    --accent: #002676;
+    --gold: #fdb515;
+    --border: #e3e3e3;
+  }
+  body { font-family: 'Geist', -apple-system, sans-serif; font-size: 13px; line-height: 1.75; }
+  .sidebar .name, .paper-title, .jmp-tag { font-family: 'Geist', -apple-system, sans-serif; }
+
+  .sidebar .name { font-size: 18.5px; font-weight: 600; letter-spacing: -0.2px; margin-bottom: 10px; }
+  .sidebar .title { font-size: 12.5px; font-weight: 600; }
+  .sidebar .affiliation { font-size: 12px; }
+  .sidebar .contact a { font-size: 12.5px; }
+  .sidebar .address { font-size: 11.5px; }
+  .sidebar .social { margin-top: 12px; }
+
+  .main-nav { gap: 22px; }
+  .main-nav a { font-size: 13.5px; font-weight: 500; letter-spacing: -0.1px; text-transform: none; }
+  .main-nav a .num, .main-nav a.active .num { font-size: 10px; color: var(--gold); font-weight: 600; }
+
+  .main h2 {
+    font-family: 'Geist', sans-serif; font-size: 17px; font-weight: 600;
+    letter-spacing: -0.2px; text-transform: none; color: var(--blue);
+    border-bottom: 1px solid var(--border); padding-bottom: 10px;
+  }
+  .main h2::before { color: var(--gold); font-weight: 600; }
+
+  .intro { font-size: 13.5px; line-height: 1.8; color: var(--text-secondary); }
+  .berkeley-link { color: var(--blue); }
+  .phrase-highlight { background: linear-gradient(180deg, transparent 60%, rgba(253,181,21,0.25) 60%); }
+
+  .paper { margin-bottom: 22px; }
+  .paper-title { font-size: 14.5px; font-weight: 600; letter-spacing: -0.1px; line-height: 1.3; margin-bottom: 3px; }
+  .coauthors { font-size: 13px; font-style: normal; color: var(--text-muted); margin-bottom: 4px; }
+  .status-line { font-size: 13px; }
+  .paper-links { gap: 8px; margin-top: 6px; }
+  .paper-links a { font-size: 11px; font-weight: 600; }
+  .paper-links a.toggle-link {
+    background: transparent; color: var(--text-secondary);
+    border: 1px solid var(--border); padding: 2px 10px; font-size: 11px;
+  }
+  .paper-links a.toggle-link:hover { background: var(--blue-light); color: var(--blue); border-color: var(--blue-light); }
+  .expandable { font-size: 13px; line-height: 1.8; border-left-color: var(--gold); }
+
+  .cv-btn { background: var(--blue-light); color: var(--blue); }
+  .cv-btn:hover { background: var(--blue); color: #fff; }
+  ::selection { background: var(--blue); color: #fff; }
 </style>
 </head>
 <body>
@@ -503,19 +557,10 @@
         <a href="CV.pdf" class="cv-btn" target="_blank">Download CV</a>
         <a href="mailto:carsonzhang@g.ucla.edu" class="cv-btn">Email</a>
       </div>
+      <div class="address">Bunche Hall 8283<br>315 Portola Plaza<br>Los Angeles, CA 90095</div>
       <div class="social">
         <a href="https://economics.ucla.edu/person/quan-carson-zhang/" target="_blank" title="UCLA Economics" aria-label="UCLA Economics"><svg viewBox="0 0 24 24"><path d="M4 10v7h3v-7H4zm6 0v7h3v-7h-3zM2 22h19v-3H2v3zm14-12v7h3v-7h-3zM11.5 1L2 6v2h19V6l-9.5-5z"/></svg></a>
         <a href="https://scholar.google.com/citations?user=W2_bdOMAAAAJ&amp;hl=en" target="_blank" title="Google Scholar" aria-label="Google Scholar"><svg viewBox="0 0 24 24"><path d="M12 24a7 7 0 110-14 7 7 0 010 14zm0-24L0 9.5l4.838 3.94A8 8 0 0112 9a8 8 0 017.162 4.44L24 9.5z"/></svg></a>
-      </div>
-      <div class="address">Bunche Hall 8283<br>315 Portola Plaza<br>Los Angeles, CA 90095</div>
-      <div class="sidebar-nav" id="sidebar-nav">
-        <div class="div-seg left l"></div>
-        <div class="div-seg left m"></div>
-        <div class="div-seg left s"></div>
-        <div class="div-circle"></div>
-        <div class="div-seg right s"></div>
-        <div class="div-seg right m"></div>
-        <div class="div-seg right l"></div>
       </div>
     </aside>
 
@@ -568,14 +613,7 @@
       <h2 id="work-in-progress">Work in Progress</h2>
 
         <div class="paper">
-          <div class="paper-title">The Rise of Medical Innovation from Acute Care</div>
-        </div>
-        <div class="paper">
           <div class="paper-title">Gene&ndash;Environment Interactions in Health: the Role of Childhood Health Care Access</div>
-        </div>
-        <div class="paper">
-          <div class="paper-title">The Interaction between Early Life Temperature Shocks and Genetics</div>
-          <div class="coauthors">with Nicolau Martin Bassols, Pietro Biroli, Elisabetta de Cao, Stephanie von Hinke, and Emily Sorensen</div>
         </div>
         <div class="paper">
           <div class="paper-title">The Labor Market Effects of Raising the Retirement Age: Age and Skill Substitution</div>
