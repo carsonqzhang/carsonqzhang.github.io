@@ -536,6 +536,12 @@
   .cv-btn { background: var(--blue-light); color: var(--blue); }
   .cv-btn:hover { background: var(--blue); color: #fff; }
   ::selection { background: var(--blue); color: #fff; }
+  .sidebar .avatar {
+    display: block; width: 100%; max-width: 210px; height: auto;
+    border-radius: 6px; margin: 4px auto 14px;
+    box-shadow: 0 4px 14px rgba(10,10,10,0.10);
+  }
+  @media (max-width: 768px) { .sidebar .avatar { max-width: 170px; } }
 </style>
 </head>
 <body>
@@ -543,6 +549,7 @@
 
     <aside class="sidebar">
       <h1 class="name">Carson Zhang</h1>
+      <img class="avatar" src="Photo-sidebar.jpg" alt="Carson Zhang" width="560" height="700">
       <div class="title">PhD Candidate in Economics</div>
       <div class="affiliation">University of California, Los Angeles</div>
       <div class="contact"><a href="mailto:carsonzhang@g.ucla.edu">carsonzhang@g.ucla.edu</a></div>
